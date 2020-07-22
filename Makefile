@@ -1,8 +1,8 @@
-CC = clang
+CC = cc
 UNAME := $(shell uname)
 ifeq ($(UNAME), Darwin)
-	CFLAGS =  -I /opt/local/include/libpng16 
-	LDFLAGS = -L /opt/local/lib/ -lpng -framework OpenCL
+	CFLAGS =
+	LDFLAGS = -lpng -framework OpenCL
 else
 	CFLAGS =  -I /usr/local/include/libpng ${AMDAPPSDKROOT}/include
 	LDFLAGS = -L /opt/local/lib/ -L ${AMDAPPSDKROOT}/lib/x86_64 -lpng -lOpenCL
